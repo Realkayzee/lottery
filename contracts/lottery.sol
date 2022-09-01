@@ -47,7 +47,7 @@ contract Lottery{
     }
 
     function participate() public payable{
-        require(started, "Game have not ");
+        require(started, "Game have not started");
         require(msg.value >= baseEntry, "Amount is not upto entry fee to participate");
         require(players.length < maxPlayers, "Players exceeded");
         players.push(msg.sender);
